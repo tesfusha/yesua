@@ -93,12 +93,21 @@ export default function LeaveMemory({ onNext }) {
               Delivered successfully to @tesfusha via Telegram.
             </p>
 
-            <button
-              onClick={onNext}
-              className="px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold text-base shadow-lg shadow-pink-500/30 transition-all inline-flex items-center gap-2"
-            >
-              Proceed to Final Message <ArrowRight className="w-5 h-5" />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href={`mailto:tesfutilahun33@gmail.com?subject=Tini's%2021st%20Birthday%20Memory&body=${encodeURIComponent(memoryText)}`}
+                className="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm shadow-md transition-all inline-flex items-center gap-2"
+              >
+                <Send className="w-4 h-4" /> Send to Email
+              </a>
+
+              <button
+                onClick={onNext}
+                className="px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold text-base shadow-lg shadow-pink-500/30 transition-all inline-flex items-center gap-2"
+              >
+                Proceed to Final Message <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         )}
       </div>

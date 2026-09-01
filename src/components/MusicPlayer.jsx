@@ -3,19 +3,52 @@ import { Volume2, VolumeX, Music, Play, Pause } from '../utils/icons';
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.5);
+  const [volume, setVolume] = useState(0.15); // Minimum volume by default
 
   // Audio pointing to public/music/Happy-Birthday-Song.m4a
   const [audio] = useState(() => {
     const a = new Audio('/music/Happy-Birthday-Song.m4a');
     a.loop = true;
-    a.volume = 0.5;
+    a.volume = 0.15;
     return a;
   });
 
   useEffect(() => {
     audio.volume = volume;
   }, [volume, audio]);
+
+  // Attempt autoplay on load, or on first user interaction
+  useEffect(() => {
+    const startAudio = () => {
+      if (!isPlaying) {
+        audio.play().then(() => {
+          setIsPlaying(true);
+        }).catch(() => {
+          // Fallback stream if needed
+          audio.src = 'https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=gentle-piano-111162.mp3';
+          audio.play().then(() => {
+            setIsPlaying(true);
+          }).catch(() => {});
+        });
+      }
+      window.removeEventListener('click', startAudio);
+      window.removeEventListener('keydown', startAudio);
+    };
+
+    // Try immediate autoplay
+    audio.play().then(() => {
+      setIsPlaying(true);
+    }).catch(() => {
+      // Browser blocked autoplay; listen for first interaction
+      window.addEventListener('click', startAudio);
+      window.addEventListener('keydown', startAudio);
+    });
+
+    return () => {
+      window.removeEventListener('click', startAudio);
+      window.removeEventListener('keydown', startAudio);
+    };
+  }, [audio, isPlaying]);
 
   const toggleMusic = () => {
     if (isPlaying) {
