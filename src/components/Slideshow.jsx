@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Film, ChevronLeft, ChevronRight, Play, Pause, Heart, Sparkles } from 'lucide-react';
+import { Film, ChevronLeft, ChevronRight, Play, Pause, Heart, Sparkles } from '../utils/icons';
 
 const slides = [
   {

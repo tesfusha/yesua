@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Music, Play, Pause } from 'lucide-react';
+import { Volume2, VolumeX, Music, Play, Pause } from '../utils/icons';
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);

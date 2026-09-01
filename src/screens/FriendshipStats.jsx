@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhoneCall, Clock, MessageSquareText, Image as ImageIcon, Sparkles, ArrowRight, Heart } from 'lucide-react';
+import { PhoneCall, Clock, MessageSquareText, Image as ImageIcon, Sparkles, ArrowRight, Heart } from '../utils/icons';
 import confetti from 'canvas-confetti';
 
 export default function FriendshipStats({ onNext }) {

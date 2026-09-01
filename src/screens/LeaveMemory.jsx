@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageSquareHeart, Send, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { MessageSquareHeart, Send, Sparkles, CheckCircle2, ArrowRight } from '../utils/icons';
 import confetti from 'canvas-confetti';
 
 export default function LeaveMemory({ onNext }) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, Stars } from 'lucide-react';
+import { Heart, Stars } from '../utils/icons';
 import confetti from 'canvas-confetti';
 
 export default function FinalMessage() {

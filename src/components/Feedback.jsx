@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageSquareHeart, Send, Sparkles, Heart, CheckCircle2 } from 'lucide-react';
+import { MessageSquareHeart, Send, Sparkles, Heart, CheckCircle2 } from '../utils/icons';
 import confetti from 'canvas-confetti';
 
 export default function Feedback() {

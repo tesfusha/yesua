@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, PartyPopper, Heart } from 'lucide-react';
+import { Sparkles, PartyPopper, Heart } from '../utils/icons';
 import confetti from 'canvas-confetti';
 
 export default function Countdown({ onComplete }) {

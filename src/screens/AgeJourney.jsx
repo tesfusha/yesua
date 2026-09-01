@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, PartyPopper, ArrowRight, FastForward } from 'lucide-react';
+import { Sparkles, PartyPopper, ArrowRight, FastForward } from '../utils/icons';
 import confetti from 'canvas-confetti';
 import { playPopSound, playChimeSound } from '../utils/sound';
 

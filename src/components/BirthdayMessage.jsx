@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Sparkles, Quote } from 'lucide-react';
+import { Heart, Sparkles, Quote } from '../utils/icons';
 import confetti from 'canvas-confetti';
 
 export default function BirthdayMessage() {

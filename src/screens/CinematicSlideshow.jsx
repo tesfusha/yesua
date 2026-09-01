@@ -1,5 +1,5 @@
 import React from 'react';
-import { Film, Sparkles, ArrowRight } from 'lucide-react';
+import { Film, Sparkles, ArrowRight } from '../utils/icons';
 import confetti from 'canvas-confetti';
 
 // Import all WebP images from src/picture dynamically

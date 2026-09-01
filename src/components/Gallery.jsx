@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Camera, Heart, Sparkles, X, Flower2 } from 'lucide-react';
+import { Camera, Heart, Sparkles, X, Flower2 } from '../utils/icons';
 
 const memories15 = [
   { id: 1, url: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80', title: 'Moment #1', caption: 'Magical celebrations' },

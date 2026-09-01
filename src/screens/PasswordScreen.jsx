@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lock, Heart, KeyRound, Sparkles } from 'lucide-react';
+import { Lock, Heart, KeyRound, Sparkles } from '../utils/icons';
 import confetti from 'canvas-confetti';
 import { playChimeSound, playPopSound } from '../utils/sound';
 

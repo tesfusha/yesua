@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, Sparkles, Trophy, Heart } from 'lucide-react';
+import { Moon, Sun, Sparkles, Trophy, Heart } from './utils/icons';
 import confetti from 'canvas-confetti';
 import { playPopSound, playChimeSound } from './utils/sound';
 

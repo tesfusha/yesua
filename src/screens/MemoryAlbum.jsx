@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Camera, Heart, Sparkles, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { Camera, Heart, Sparkles, ChevronLeft, ChevronRight, ArrowRight } from '../utils/icons';
 import confetti from 'canvas-confetti';
 
 const imageModules = import.meta.glob('../picture/*.webp', { eager: true });

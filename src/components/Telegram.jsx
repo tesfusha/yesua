@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, Sparkles } from 'lucide-react';
+import { Send, Sparkles } from '../utils/icons';
 
 export default function Telegram() {
   return (
