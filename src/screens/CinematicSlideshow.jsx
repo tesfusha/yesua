@@ -21,15 +21,15 @@ export default function CinematicSlideshow({ onNext }) {
   };
 
   return (
-    <div className="fixed inset-0 w-screen h-screen flex flex-col items-center justify-between p-4 md:p-6 bg-gradient-to-br from-pink-100 via-rose-200 to-purple-200 dark:from-slate-950 dark:via-purple-950 dark:to-slate-900 z-50 animate-fadeIn overflow-hidden">
+    <div className="fixed inset-0 w-screen h-screen flex flex-col items-center justify-between p-4 md:p-6 clean-gradient dark:clean-gradient z-50 animate-fadeIn overflow-hidden">
       
       {/* Header */}
       <div className="text-center z-10 pt-2">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-pink-500 text-xs font-bold uppercase tracking-widest mb-1 shadow-sm">
-          <Film className="w-3.5 h-3.5" /> Chapter 5: Cinematic Memory Wall <Sparkles className="w-3.5 h-3.5" />
+          <Film className="w-3.5 h-3.5" /> Chapter 5: Cinematic Memory Wall
         </div>
-        <h2 className="text-2xl md:text-3xl font-extrabold font-['Playfair_Display'] bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-          Tini's Moving WebP Memories ✨
+        <h2 className="text-2xl md:text-3xl font-extrabold font-['Playfair_Display'] text-pink-600 dark:text-pink-400">
+          Tini's Moving WebP Memories
         </h2>
       </div>
 
@@ -42,7 +42,7 @@ export default function CinematicSlideshow({ onNext }) {
 
         {/* Row 1: Scrolls Left */}
         <div className="relative overflow-hidden w-full h-[31%] rounded-2xl glass-card p-2">
-          <div className="flex gap-4 animate-marquee-left transform-gpu will-change-transform h-full items-center" style={{ width: 'max-content' }}>
+              <div className="flex gap-4 animate-marquee-right transform-gpu will-change-transform h-full items-center" style={{ width: 'max-content' }}>
             {[...row1, ...row1, ...row1, ...row1].map((photo, idx) => (
               <div key={idx} className="relative h-full w-48 sm:w-60 rounded-xl overflow-hidden shadow-lg bg-slate-950 shrink-0 group">
                 <div 
@@ -63,7 +63,7 @@ export default function CinematicSlideshow({ onNext }) {
 
         {/* Row 2: Scrolls Right */}
         <div className="relative overflow-hidden w-full h-[31%] rounded-2xl glass-card p-2">
-          <div className="flex gap-4 animate-marquee-right transform-gpu will-change-transform h-full items-center" style={{ width: 'max-content' }}>
+              <div className="flex gap-4 animate-marquee-left transform-gpu will-change-transform h-full items-center" style={{ width: 'max-content' }}>
             {[...row2, ...row2, ...row2, ...row2].map((photo, idx) => (
               <div key={idx} className="relative h-full w-48 sm:w-60 rounded-xl overflow-hidden shadow-lg bg-slate-950 shrink-0 group">
                 <div 
@@ -84,7 +84,7 @@ export default function CinematicSlideshow({ onNext }) {
 
         {/* Row 3: Scrolls Left */}
         <div className="relative overflow-hidden w-full h-[31%] rounded-2xl glass-card p-2">
-          <div className="flex gap-4 animate-marquee-left transform-gpu will-change-transform h-full items-center" style={{ width: 'max-content', animationDuration: '32s' }}>
+              <div className="flex gap-4 animate-marquee-right transform-gpu will-change-transform h-full items-center" style={{ width: 'max-content', animationDuration: '32s' }}>
             {[...row3, ...row3, ...row3, ...row3].map((photo, idx) => (
               <div key={idx} className="relative h-full w-48 sm:w-60 rounded-xl overflow-hidden shadow-lg bg-slate-950 shrink-0 group">
                 <div 

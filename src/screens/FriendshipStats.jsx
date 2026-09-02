@@ -12,14 +12,14 @@ export default function FriendshipStats({ onNext }) {
     <div className="fixed inset-0 w-screen h-screen flex items-center justify-center p-4 bg-gradient-to-br from-pink-100 via-rose-200 to-purple-200 dark:from-slate-950 dark:via-purple-950 dark:to-slate-900 z-50 animate-fadeIn overflow-y-auto">
       <div className="glass-card p-8 md:p-14 rounded-3xl shadow-2xl max-w-3xl w-full text-center relative my-auto">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-pink-500 text-xs font-bold uppercase tracking-widest mb-4 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5" /> Best Friend Hall of Fame 👑
+                          <Sparkles className="w-3.5 h-3.5" /> Best Friend Hall of Fame
         </div>
 
         <h2 className="text-3xl md:text-4xl font-extrabold font-['Playfair_Display'] bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent mb-2">
-          Our Epic Friendship Stats 📊
+                          Our Epic Friendship Stats
         </h2>
         <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base font-['Dancing_Script'] text-2xl mb-8">
-          Proof that we survived each other for 21 years (and counting!) 😂
+          Proof that we                           survived each other for 21 years (and counting!)
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
@@ -33,7 +33,7 @@ export default function FriendshipStats({ onNext }) {
                 1,184+
               </h3>
               <p className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Phone Calls</p>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 italic mt-0.5">*(Plus secret calls from unknown numbers! 🤫)*</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 italic mt-0.5">                          *(Plus secret calls from unknown numbers!)*</p>
             </div>
           </div>
 
@@ -75,7 +75,7 @@ export default function FriendshipStats({ onNext }) {
                 200+
               </h3>
               <p className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Captured Pictures</p>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 italic mt-0.5">Stored safely on my phone gallery forever! 📸</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 italic mt-0.5">                          Stored safely on my phone gallery forever!</p>
             </div>
           </div>
         </div>

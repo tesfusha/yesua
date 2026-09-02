@@ -54,10 +54,7 @@ export default function AgeJourney({ onNext }) {
   };
 
   return (
-    <div className="fixed inset-0 w-screen h-screen flex items-center justify-center p-4 bg-gradient-to-br from-pink-100 via-rose-200 to-purple-200 dark:from-slate-950 dark:via-purple-950 dark:to-slate-900 z-50 animate-fadeIn">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-400/15 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
-
+    <div className="fixed inset-0 w-screen h-screen flex items-center justify-center p-4 clean-gradient dark:clean-gradient z-50 animate-fadeIn">
       <div className="glass-card p-10 md:p-16 rounded-3xl shadow-2xl max-w-2xl w-full text-center relative z-10">
         {!isCompleted && (
           <button
@@ -79,7 +76,7 @@ export default function AgeJourney({ onNext }) {
             </div>
 
             <div className="text-3xl tracking-widest">
-              {'🎈'.repeat(Math.min(currentNum, 12))}
+              {'✦'.repeat(Math.min(currentNum, 12))}
             </div>
 
             <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg font-medium">
@@ -88,12 +85,12 @@ export default function AgeJourney({ onNext }) {
           </div>
         ) : (
           <div className="space-y-8 py-6 animate-fadeIn">
-            <div className="w-20 h-20 bg-gradient-to-tr from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto text-white shadow-xl shadow-pink-500/30 animate-bounce">
+            <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto text-slate-600 dark:text-slate-300 shadow-xl">
               <PartyPopper className="w-10 h-10" />
             </div>
 
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold font-['Playfair_Display'] bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 bg-clip-text text-transparent">
-              🎉 Happy 21st Birthday, Tini! 🎉
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold font-['Playfair_Display'] text-slate-800 dark:text-slate-100">
+              Happy 21st Birthday, Tini!
             </h2>
 
             <p className="text-slate-700 dark:text-slate-300 text-lg md:text-xl font-['Dancing_Script'] max-w-lg mx-auto">
@@ -102,7 +99,7 @@ export default function AgeJourney({ onNext }) {
 
             <button
               onClick={onNext}
-              className="px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-base shadow-lg shadow-pink-500/30 transform hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 mx-auto"
+              className="px-8 py-4 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-base shadow-lg shadow-slate-500/30 transition-all flex items-center justify-center gap-2 mx-auto"
             >
               Continue to Birthday Letter <ArrowRight className="w-5 h-5" />
             </button>

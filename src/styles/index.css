@@ -60,76 +60,55 @@
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.05) !important;
   }
+
+  .clean-gradient {
+    background: linear-gradient(135deg, #faf5ff 0%, #fdf2f8 50%, #fce7f3 100%);
+  }
+  .dark .clean-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #1a0a2e 100%);
+  }
 }
 
-/* Floating Balloons Animation */
-@keyframes floatUp {
+@keyframes marquee-left {
   0% {
-    transform: translateY(110vh) scale(0.8) rotate(0deg);
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateY(-20vh) scale(1.1) rotate(20deg);
-    opacity: 0;
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
-.balloon {
-  position: fixed;
-  bottom: -150px;
-  width: 45px;
-  height: 55px;
-  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-  animation: floatUp 12s infinite ease-in;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.balloon::after {
-  content: "";
-  position: absolute;
-  bottom: -12px;
-  left: 20px;
-  width: 2px;
-  height: 15px;
-  background-color: rgba(150, 150, 150, 0.6);
-}
-
-/* Shaking animation for wrong password */
-@keyframes shakeAnimation {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-10px); }
-  40%, 80% { transform: translateX(10px); }
-}
-
-.animate-shake {
-  animation: shakeAnimation 0.5s ease-in-out;
-}
-
-/* 3-Row Marquee Animations */
-@keyframes marqueeLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes marqueeRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+@keyframes marquee-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .animate-marquee-left {
-  animation: marqueeLeft 35s linear infinite;
+  animation: marquee-left 24s linear infinite !important;
 }
 
 .animate-marquee-right {
-  animation: marqueeRight 35s linear infinite;
+  animation: marquee-right 24s linear infinite !important;
 }
 
-.animate-marquee-left:hover, .animate-marquee-right:hover {
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
   animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Custom Scrollbar */

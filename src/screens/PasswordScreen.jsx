@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lock, Heart, KeyRound, Sparkles } from '../utils/icons';
+import { Lock, KeyRound, Sparkles } from '../utils/icons';
 import confetti from 'canvas-confetti';
 import { playChimeSound, playPopSound } from '../utils/sound';
 
@@ -29,22 +29,18 @@ export default function PasswordScreen({ onNext }) {
   };
 
   return (
-    <div className="fixed inset-0 w-screen h-screen flex items-center justify-center p-4 bg-gradient-to-br from-pink-100 via-rose-200 to-purple-200 dark:from-slate-950 dark:via-purple-950 dark:to-slate-900 z-50 animate-fadeIn">
-      {/* Background glowing lights */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-pink-400/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
-
+    <div className="fixed inset-0 w-screen h-screen flex items-center justify-center p-4 clean-gradient dark:clean-gradient z-50 animate-fadeIn">
       <div className={`glass-card p-8 md:p-14 rounded-3xl shadow-2xl max-w-lg w-full text-center relative z-10 transition-all duration-300 ${shake ? 'animate-shake border-red-400' : ''}`}>
-        <div className="w-20 h-20 bg-gradient-to-tr from-pink-500 to-rose-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-pink-500/30 text-white">
-          <Lock className="w-10 h-10 animate-bounce" />
+        <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg text-slate-600 dark:text-slate-300">
+          <Lock className="w-10 h-10" />
         </div>
 
         <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full glass-pill text-pink-500 text-xs font-bold uppercase tracking-widest mb-4 shadow-sm">
           <Sparkles className="w-3.5 h-3.5" /> Chapter 1: The Beginning
         </div>
 
-        <h1 className="text-2xl md:text-3xl font-bold font-['Playfair_Display'] mb-4 bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-          ✨ A small surprise is waiting for you...
+        <h1 className="text-2xl md:text-3xl font-bold font-['Playfair_Display'] mb-4 text-slate-800 dark:text-slate-100">
+          A small surprise is waiting for you...
         </h1>
         
         <p className="text-slate-800 dark:text-slate-100 font-bold text-lg mb-6 font-['Playfair_Display']">
@@ -53,7 +49,7 @@ export default function PasswordScreen({ onNext }) {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="relative">
-            <span className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-pink-400">
+            <span className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
               <KeyRound className="w-5 h-5" />
             </span>
             <input
@@ -71,7 +67,7 @@ export default function PasswordScreen({ onNext }) {
 
           {error && (
             <div className="text-red-500 text-xs md:text-sm font-semibold space-y-1 bg-red-500/10 p-3 rounded-xl border border-red-500/20 animate-fadeIn">
-              <p className="font-bold text-base">Oops 😆</p>
+              <p className="font-bold text-base">Oops</p>
               <p>That's not the nickname I'm looking for.</p>
               <p className="italic text-pink-500 font-bold">Try again. (Hint: tini)</p>
             </div>
@@ -79,7 +75,7 @@ export default function PasswordScreen({ onNext }) {
 
           <button
             type="submit"
-            className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-base shadow-lg shadow-pink-500/30 transform hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2"
+            className="w-full py-4 px-6 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-base shadow-lg shadow-slate-500/30 transition-all flex items-center justify-center gap-2"
           >
             <Sparkles className="w-5 h-5" />
             Unlock Chapter
@@ -87,7 +83,7 @@ export default function PasswordScreen({ onNext }) {
         </form>
 
         <div className="mt-8 flex items-center justify-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
-          Made with <Heart className="w-3.5 h-3.5 text-pink-500 fill-pink-500 inline" /> by Tesfish for Tini ❤️
+          Made with <span className="inline-block">by Tesfish for Tini</span>
         </div>
       </div>
     </div>
