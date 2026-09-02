@@ -1,61 +1,28 @@
 import React, { useState } from 'react';
-import { MessageSquareHeart, Send, Sparkles, Heart, CheckCircle2 } from '../utils/icons';
+import { MessageSquareHeart, Send, CheckCircle2 } from '../utils/icons';
 import confetti from 'canvas-confetti';
 
 export default function Feedback() {
   const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [errorMsg, setErrorMsg] = useState('');
 
-  // Telegram Bot API configuration variables
-  const BOT_TOKEN = 'YOUR_BOT_TOKEN';
-  const CHAT_ID = 'YOUR_CHAT_ID';
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!feedback.trim()) return;
 
-    setLoading(true);
-    setErrorMsg('');
+    const recipient = 'tesfutilahun33@gmail.com';
+    const subject = encodeURIComponent("Tini's 21st Birthday Feedback");
+    const body = encodeURIComponent(feedback.trim());
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
 
-    const textMessage = `Happy Birthday Website Feedback\nDate: September 4, 2026\n\nMessage:\n${feedback.trim()}`;
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
 
-    try {
-      // If BOT_TOKEN is still placeholder, simulate success or make actual fetch if valid token is provided
-      if (BOT_TOKEN === 'YOUR_BOT_TOKEN') {
-        // Simulate successful submission for prototype testing
-        await new Promise((resolve) => setTimeout(resolve, 800));
-      } else {
-        const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            chat_id: CHAT_ID,
-            text: textMessage,
-          }),
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to send message to Telegram');
-        }
-      }
-
-      setSubmitted(true);
-      setFeedback('');
-      confetti({
-        particleCount: 150,
-        spread: 80,
-        origin: { y: 0.6 }
-      });
-    } catch (err) {
-      setErrorMsg('Could not send via Telegram bot. Saved locally with love! ❤️');
-      setSubmitted(true);
-    } finally {
-      setLoading(false);
-    }
+    setSubmitted(true);
+    confetti({
+      particleCount: 150,
+      spread: 80,
+      origin: { y: 0.6 }
+    });
   };
 
   return (
@@ -63,13 +30,13 @@ export default function Feedback() {
       <div className="glass-card p-8 md:p-14 rounded-3xl shadow-2xl relative overflow-hidden">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-pink-500 text-xs font-bold uppercase tracking-widest mb-3 shadow-sm">
-            <MessageSquareHeart className="w-3.5 h-3.5" /> Required Feedback Screen <Sparkles className="w-3.5 h-3.5" />
+            <MessageSquareHeart className="w-3.5 h-3.5" /> Leave Your Feedback
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold font-['Playfair_Display'] bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent mb-2">
+          <h2 className="text-3xl md:text-4xl font-extrabold font-['Playfair_Display'] text-slate-800 dark:text-slate-100 mb-2">
             Before you leave...
           </h2>
           <p className="text-xl md:text-2xl font-bold font-['Dancing_Script'] text-pink-600 dark:text-pink-400">
-            You must write something. 😆
+            Write your thoughts & wishes
           </p>
         </div>
 
@@ -78,7 +45,7 @@ export default function Feedback() {
             <div>
               <div className="flex justify-between items-center mb-2">
                 <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase">
-                  Your Thoughts & Wishes
+                  Your Message
                 </label>
                 <span className="text-xs text-slate-400">
                   {feedback.length} characters
@@ -96,11 +63,10 @@ export default function Feedback() {
 
             <button
               type="submit"
-              disabled={loading}
-              className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-base shadow-lg shadow-pink-500/30 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full py-4 px-6 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-base shadow-lg transition-all flex items-center justify-center gap-2"
             >
               <Send className="w-5 h-5" />
-              {loading ? 'Sending to Telegram...' : 'Send Message'}
+              Send to Email (New Tab)
             </button>
           </form>
         ) : (
@@ -109,12 +75,11 @@ export default function Feedback() {
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold font-['Playfair_Display'] text-pink-600 dark:text-pink-300">
-              Thank you for sharing your thoughts ❤️
+              Thank you for sharing your thoughts
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-400 font-['Dancing_Script'] text-xl">
-              Your special note has been delivered successfully.
+              Opened in a new tab for tesfutilahun33@gmail.com
             </p>
-            {errorMsg && <p className="text-xs text-amber-500">{errorMsg}</p>}
           </div>
         )}
       </div>

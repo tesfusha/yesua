@@ -82,11 +82,11 @@ export default function MusicPlayer() {
 
       <div className="hidden sm:flex flex-col text-left">
         <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-slate-200">
-          <Music className="w-3.5 h-3.5 text-pink-500 animate-bounce" />
-          <span>Happy Birthday Song 🎵</span>
+          <Music className="w-3.5 h-3.5 text-pink-500" />
+          <span>Happy Birthday Song</span>
         </div>
         <span className="text-[10px] text-slate-500 dark:text-slate-400">
-          {isPlaying ? 'Playing celebration 🎶' : 'Click to play 🎂'}
+          {isPlaying ? 'Playing celebration' : 'Click to play'}
         </span>
       </div>
 
